@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { GlitchText } from './components/GlitchText';
 import { ViewState } from './types';
-import { INTRO_TEXT, DISTRICTS, ASSOCIATIONS, TERMS } from './data/lore';
-import { MapPin, Shield, Search, BookOpen, Skull, Building2, Terminal } from 'lucide-react';
+import { INTRO_TEXT, DISTRICTS, ASSOCIATIONS, TERMS, CHARACTERS } from './data/lore';
+import { MapPin, Shield, Search, BookOpen, Skull, Building2, Terminal, User, AlertTriangle } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>(ViewState.INTRO);
@@ -118,6 +118,52 @@ const App: React.FC = () => {
     </div>
   );
 
+  const renderPersonnel = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-12">
+      {CHARACTERS.map((char, idx) => (
+        <div key={idx} className="bg-black/80 border border-gray-700 p-4 flex flex-col gap-4 relative overflow-hidden group hover:border-[#FF003C] transition-colors">
+          <div className="absolute top-0 right-0 bg-gray-800 px-2 py-1 text-[10px] font-mono text-gray-400 group-hover:bg-[#FF003C] group-hover:text-black transition-colors">
+            ID: {Math.random().toString(36).substr(2, 9).toUpperCase()}
+          </div>
+          
+          <div className="flex items-start gap-4 border-b border-gray-800 pb-4">
+            <div className="w-16 h-16 bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-600 group-hover:text-[#FF003C] group-hover:border-[#FF003C] transition-colors">
+              <User size={32} />
+            </div>
+            <div>
+              <GlitchText text={char.name} as="h3" className="text-xl font-bold text-white uppercase" />
+              <div className="text-sm text-[#FCEE0A] font-mono-tech mt-1">{char.affiliation}</div>
+              <div className="text-xs text-gray-500 flex items-center gap-1 mt-1">
+                <MapPin size={10} />
+                {char.location}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3 text-sm">
+            <div>
+              <span className="text-[#00F0FF] text-xs font-bold uppercase block mb-1">Personality Matrix</span>
+              <p className="text-gray-300">{char.personality}</p>
+            </div>
+            <div>
+              <span className="text-[#00F0FF] text-xs font-bold uppercase block mb-1">Appearance Data</span>
+              <p className="text-gray-400 font-mono-tech leading-tight">{char.appearance}</p>
+            </div>
+            {char.notes && (
+              <div className="bg-[#FF003C]/10 border-l-2 border-[#FF003C] p-2 mt-2">
+                <span className="text-[#FF003C] text-[10px] font-bold uppercase flex items-center gap-1 mb-1">
+                  <AlertTriangle size={10} />
+                  Addendum
+                </span>
+                <p className="text-gray-300 text-xs italic">{char.notes}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   const renderGlossary = () => {
     // Group terms
     const categories = {
@@ -166,6 +212,7 @@ const App: React.FC = () => {
         {currentView === ViewState.INTRO && renderIntro()}
         {currentView === ViewState.DISTRICTS && renderDistricts()}
         {currentView === ViewState.ASSOCIATIONS && renderAssociations()}
+        {currentView === ViewState.PERSONNEL && renderPersonnel()}
         {currentView === ViewState.GLOSSARY && renderGlossary()}
       </div>
     </Layout>

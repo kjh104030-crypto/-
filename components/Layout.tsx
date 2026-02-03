@@ -64,6 +64,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentView, onNavigat
         <NavButton label="INTRO" isActive={currentView === 'INTRO'} onClick={() => onNavigate('INTRO')} />
         <NavButton label="DISTRICTS" isActive={currentView === 'DISTRICTS'} onClick={() => onNavigate('DISTRICTS')} />
         <NavButton label="ASSOCIATIONS" isActive={currentView === 'ASSOCIATIONS'} onClick={() => onNavigate('ASSOCIATIONS')} />
+        <NavButton label="PERSONNEL" isActive={currentView === 'PERSONNEL'} onClick={() => onNavigate('PERSONNEL')} />
         <NavButton label="GLOSSARY" isActive={currentView === 'GLOSSARY'} onClick={() => onNavigate('GLOSSARY')} />
       </nav>
 

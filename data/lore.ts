@@ -1,4 +1,4 @@
-import { District, Association, Term } from '../types';
+import { District, Association, Term, Character } from '../types';
 
 export const INTRO_TEXT = `관리자님이 처한 특수한 상황을 저희는 이해하고 있습니다. 대부분 당연한 사항이지만, 이곳에 기술하고자 합니다. 잊으셨을지 모르겠지만, 우리는 26개의 구로 나누어진 거대한 도시 속에서 살아가고 있습니다. 모든 구역은 둥지라고 불리는 핵심 구역이 존재합니다. 새가 둥지 속의 알을 품듯, 해당 둥지를 관장하는 거대 기업은 둥지 속 거주민들을 보호합니다.\n\n물론, 모든 빛에는 그림자가 존재하듯이, 둥지의 바깥… 뒷골목의 거주민까지 보호하지는 않습니다.`;
 
@@ -180,7 +180,7 @@ export const ASSOCIATIONS: Association[] = [
     name: '여실 협회', 
     location: 'J구역', 
     role: '치안(기사도)', 
-    description: '여달 협회와 함께 치안을 유지하는 협회. 중갑과 대검이 특징. 기사도 정신이 투철하며, 돈만 주면 다른 구역에서도 용병처럼 활동하기도 한다.' 
+    description: '여실 협회와 함께 치안을 유지하는 협회. 중갑과 대검이 특징. 기사도 정신이 투철하며, 돈만 주면 다른 구역에서도 용병처럼 활동하기도 한다.' 
   },
   { 
     name: '차르일 협회', 
@@ -219,4 +219,243 @@ export const TERMS: Term[] = [
   { category: 'org', term: '해결사', definition: "도시의 의뢰를 해결하는 업자. 9급(일반인)부터 1급(최상위)까지 나뉜다. 7급부터 정식 대우, 4급 이상은 협회의 주력 전력이다." },
   { category: 'org', term: '사무소', definition: "해결사들이 운영하는 민간 군사/탐정 기업. 1인 사무소부터 대형 기업형 사무소까지 다양하나, 생존율이 낮아 교체가 잦다." },
   { category: 'org', term: '등급 체계', definition: "9급: 무장 민간인 / 8급: 2인 사무소 가능, 신체능력 우수 / 7급: 정식 해결사, 협회 말단 / 6급: 베테랑, 협회 인턴 / 5급: 정식 사무소장, 총기 구매 가능 / 4급: 협회 주력." },
+];
+
+export const CHARACTERS: Character[] = [
+  {
+    name: "가디",
+    affiliation: "데이갈 협회",
+    location: "X구역",
+    personality: "츤데레, 자기 자신을 쉴 새 없이 휘몰아침",
+    appearance: "검은 양갈래와 적안을 가진 여성. 긴 쇠막대를 무기로 가지고 다님."
+  },
+  {
+    name: "메킬",
+    affiliation: "듀르 협회",
+    location: "D구역",
+    personality: "귀차니즘, 냉담함",
+    appearance: "노란 장발과 백안 가진 남성. 양 팔이 기계 의수.",
+    notes: "실력 좋은 장비 제작자. 에밀리아와 남매. 동생 때문에 한숨을 자주 쉼."
+  },
+  {
+    name: "에밀리아",
+    affiliation: "듀르 협회",
+    location: "D구역",
+    personality: "천진난만함, 의욕이 넘침",
+    appearance: "반만 쓸어넘긴 노란 머리와 검은 눈동자를 가진 여성. 왼팔이 기계 의수.",
+    notes: "메킬과 남매. 하오체와 하게체 사용."
+  },
+  {
+    name: "바르바라",
+    affiliation: "세르다 협회",
+    location: "P구역",
+    personality: "정중함, 담담함",
+    appearance: "반만 쓸어넘긴 검은 머리와 주황색 눈동자를 가진 남성. 안경알이 주황색인 선글라스, 망토, 견장 착용. 오른손에 여러 반지 착용."
+  },
+  {
+    name: "안드레아",
+    affiliation: "세르다 협회",
+    location: "P구역",
+    personality: "물질만능주의적 사고, 꼼꼼함",
+    appearance: "하얀 올백머리와 진청색 눈동자를 가진 여성. 망토와 견장 착용.",
+    notes: "애연가로써 담배를 자주 물고있음."
+  },
+  {
+    name: "백산",
+    affiliation: "나드 협회",
+    location: "유랑 (여러 구역)",
+    personality: "능동적 허무주의, 연극을 하는 듯한 성격",
+    appearance: "하얀색과 검은색이 섞인 머리와 검은 눈동자를 가진 여성. 도끼를 들고다님.",
+    notes: "경어체 사용."
+  },
+  {
+    name: "에델",
+    affiliation: "다세오 협회",
+    location: "W구역",
+    personality: "인명경시적 태도, 차분함",
+    appearance: "진녹색 머리와 녹안을 지닌 남성. 검은 장갑과 녹색 귀걸이를 착용중.",
+    notes: "하게체 사용."
+  },
+  {
+    name: "율리아",
+    affiliation: "다세오 협회",
+    location: "W구역",
+    personality: "무덤덤함, 협상에 능함",
+    appearance: "검은색 머리와 녹안을 지닌 여성. 녹색 귀걸이를 착용중."
+  },
+  {
+    name: "요한",
+    affiliation: "여실 협회",
+    location: "J구역",
+    personality: "회의적인, 예리한",
+    appearance: "푸른 머리와 청안을 가진 남성. 금색 귀걸이와 푸른빛으로 장식된 금빛 갑옷을 착용."
+  },
+  {
+    name: "엘레나",
+    affiliation: "여실 협회",
+    location: "J구역",
+    personality: "자만심 강한, 자아성찰적",
+    appearance: "연한 갈색머리와 벽안을 가진 여성. 바늘같은 귀걸이와 흑갑 착용."
+  },
+  {
+    name: "비올레",
+    affiliation: "차르일 협회",
+    location: "M구역",
+    personality: "고지식한, 올곧은",
+    appearance: "검은 머리와 자안을 가진 여성."
+  },
+  {
+    name: "제이슨",
+    affiliation: "차르일 협회",
+    location: "M구역",
+    personality: "능글맞은, 임기응변이 빠른",
+    appearance: "검은 머리와 자안을 가진 남성."
+  },
+  {
+    name: "윤후",
+    affiliation: "여달 협회",
+    location: "S구역",
+    personality: "능동적인, 너그러운",
+    appearance: "긴 갈색 반쯤 넘긴 머리와 주황색 눈동자를 가진 남성. 복(福)이 새겨진 귀걸이 착용.",
+    notes: "하게체 사용."
+  },
+  {
+    name: "차오",
+    affiliation: "여달 협회",
+    location: "S구역",
+    personality: "고지식한, 예리한",
+    appearance: "긴 갈색 올백 머리와 주황색 눈동자를 가진 여성. 복(福)이 새겨진 귀걸이 착용."
+  },
+  {
+    name: "이든",
+    affiliation: "나홈 협회",
+    location: "N구역",
+    personality: "탐구적인, 영리한",
+    appearance: "짧은 갈색머리와 벽안을 가진 남성. 파이프 담배를 지니고 있음.",
+    notes: "애연가."
+  },
+  {
+    name: "카밀라",
+    affiliation: "나홈 협회",
+    location: "N구역",
+    personality: "세심한, 주도면밀한",
+    appearance: "짧은 갈색 포니테일과 벽안을 가진 여성. 안경 착용중.",
+    notes: "애연가."
+  },
+  {
+    name: "그리타",
+    affiliation: "티아슬 협회",
+    location: "유랑 (어느 구역이든)",
+    personality: "무심한, 순수한, 귀차니즘 다수 함유",
+    appearance: "짧은 하얀머리와 벽안을 가진 여성."
+  },
+  {
+    name: "카르펄",
+    affiliation: "티아슬 협회",
+    location: "유랑 (어느 구역이든)",
+    personality: "현실적인, 예리한",
+    appearance: "짧은 회색머리와 주황색 눈을 가진 남성. 한손 도끼를 지니고 다님.",
+    notes: "그리타와 같이 다님."
+  },
+  {
+    name: "라몰",
+    affiliation: "정보상",
+    location: "K구역",
+    personality: "영리한, 귀찮음 많은",
+    appearance: "하얀머리와 오드아이(파란색, 하얀색)를 가진 여성.",
+    notes: "모든 대답을 단답으로 함. 도시의 정보를 많이 가지고 있음."
+  },
+  {
+    name: "라온",
+    affiliation: "아딜 사무소",
+    location: "T구역",
+    personality: "담담함",
+    appearance: "주황색 머리와 녹안을 지닌 여성.",
+    notes: "사무소장."
+  },
+  {
+    name: "솔리시단테",
+    affiliation: "알레 사무소",
+    location: "J구역",
+    personality: "차분함, 친절함",
+    appearance: "짧은 민트색 머리와 벽안을 지닌 여성."
+  },
+  {
+    name: "칸디다토",
+    affiliation: "알레 사무소",
+    location: "J구역",
+    personality: "겁이 있는, 임기응변을 잘하는",
+    appearance: "짧은 노란색 머리와 녹안을 지닌 남성. 남성이지만 곱상한 외모."
+  },
+  {
+    name: "파울라",
+    affiliation: "알레 사무소",
+    location: "J구역",
+    personality: "거래에 능한, 주도면밀한",
+    appearance: "검은 포니테일과 검은 눈을 가진 여성. 오른쪽 눈의 안대와 왼쪽 귀의 귀걸이를 착용함.",
+    notes: "사무소장. 애연가."
+  },
+  {
+    name: "에위르",
+    affiliation: "무소속",
+    location: "U구역",
+    personality: "순수한, 조심성있는",
+    appearance: "짧은 파란 머리와 노란색 눈을 지닌 여성.",
+    notes: "악의는 없지만 무의식적인 비꼬는 어투 사용."
+  },
+  {
+    name: "아델하이트",
+    affiliation: "나겔 공방",
+    location: "R구역",
+    personality: "활발한, 활기찬",
+    appearance: "검은 머리와 벽안을 지닌 여성.",
+    notes: "점장. 친분이 있는 사람에겐 동남 방언 사용, 그 외엔 표준어 사용."
+  },
+  {
+    name: "하메",
+    affiliation: "무소속",
+    location: "R구역",
+    personality: "귀찮은, 날카로움",
+    appearance: "검은 머리와 오드아이(하얀색,빨간색)을 지닌 여성."
+  },
+  {
+    name: "서원",
+    affiliation: "무소속",
+    location: "Z구역",
+    personality: "경계심 강한, 삶에 대한 갈망이 심한, 츤데레",
+    appearance: "붉고 긴 머리와 주황색 눈을 지닌 여성. 팔에 붕대를 감음.",
+    notes: "암기 사용. 욕설 사용. 특이한 식성."
+  },
+  {
+    name: "창서",
+    affiliation: "무소속",
+    location: "Z구역",
+    personality: "경계심 강한, 생존주의",
+    appearance: "짧은 회색머리와 주황색 눈을 지닌 남성. 양 팔에 붕대를 감음.",
+    notes: "너클 사용."
+  },
+  {
+    name: "타라니",
+    affiliation: "아테나이에 (투기장)",
+    location: "R구역",
+    personality: "호탕한, 정정당당한",
+    appearance: "짧은 검은 머리와 깊고 푸른 눈을 지닌 여성.",
+    notes: "경기장 일인자. 서남 방언 사용. 5급 해결사."
+  },
+  {
+    name: "알란",
+    affiliation: "미끼먹이 공방",
+    location: "O구역",
+    personality: "피곤한",
+    appearance: "짧은 검은 머리와 검은 눈을 가진 남성.",
+    notes: "점장. 기계팔 제작자."
+  },
+  {
+    name: "시라",
+    affiliation: "미끼먹이 공방",
+    location: "O구역",
+    personality: "소악마스러운",
+    appearance: "분홍색 양갈래 머리와 연갈색 눈을 가진 여성.",
+    notes: "직원. 알란의 동생."
+  }
 ];

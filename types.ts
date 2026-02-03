@@ -18,9 +18,19 @@ export interface Term {
   category: 'general' | 'entity' | 'combat' | 'org';
 }
 
+export interface Character {
+  name: string;
+  affiliation: string; // Association or Office name
+  location: string;
+  personality: string;
+  appearance: string;
+  notes?: string;
+}
+
 export enum ViewState {
   INTRO = 'INTRO',
   DISTRICTS = 'DISTRICTS',
   ASSOCIATIONS = 'ASSOCIATIONS',
+  PERSONNEL = 'PERSONNEL',
   GLOSSARY = 'GLOSSARY',
 }
