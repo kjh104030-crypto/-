@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Note: Tailwind directives are removed as the CDN script handles them. 
+   This file now contains only custom overrides and animations. */
 
 body {
   background-color: #050505;
