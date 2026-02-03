@@ -38,6 +38,27 @@ body {
 .animate-glitch-hover:hover {
   animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
 }
+.animate-glitch {
+  animation: glitch 2s cubic-bezier(.25, .46, .45, .94) infinite;
+}
+
+/* Bounce Slight */
+@keyframes bounceSlight {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-bounce-slight {
+  animation: bounceSlight 3s ease-in-out infinite;
+}
+
+/* Spin Slow */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 10s linear infinite;
+}
 
 /* Scanline Effect */
 .scanlines {

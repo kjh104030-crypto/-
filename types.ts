@@ -1,3 +1,4 @@
+
 export interface District {
   id: string;
   name: string;
@@ -25,6 +26,7 @@ export interface Character {
   personality: string;
   appearance: string;
   notes?: string;
+  resolve: string; // Added field for short quote
 }
 
 export enum ViewState {
